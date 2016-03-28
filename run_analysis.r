@@ -49,3 +49,6 @@ colnames(combined_data)<-gsub("--", "-", colnames(combined_data))
 
 #Create another data set with averages by activity
 average_data<-aggregate(. ~ activity, data = combined_data[,-1], mean)
+
+#Write to file
+write.table(average_data, file="average_data.txt", row.name= F)
